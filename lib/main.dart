@@ -1,11 +1,9 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_wallet/widgets/body.dart';
 import './widgets/header.dart';
-import 'package:month_picker_dialog/month_picker_dialog.dart';
+import 'package:month_picker_dialog_2/month_picker_dialog_2.dart';
 import './models/expense.dart';
 import './widgets/add_expense.dart';
 
@@ -46,23 +44,23 @@ class _MyWalletState extends State<MyWallet> {
   bool showExpenseList = false;
 
   void showCalendar(BuildContext context) {
-    showMonthPicker(
-      context: context,
-      initialDate: DateTime.now(),
-      firstDate: DateTime(2021),
-      lastDate: DateTime(2023),
-    ).then((value) {
-      if (value != null) {
-        setState(() {
-          selectedDate = value;
-        });
-      }
-    });
+    // showMonthPicker(
+    //   context: context,
+    //   initialDate: DateTime.now(),
+    //   firstDate: DateTime(2022),
+    //   lastDate: DateTime(2024),
+    // ).then((value) {
+    //   if (value != null) {
+    //     setState(() {
+    //       selectedDate = value;
+    //     });
+    //   }
+    // });
   }
 
   void previousMonth() {
     setState(() {
-      if (selectedDate.year == 2020 && selectedDate.month == 1) {
+      if (selectedDate.year == 2022 && selectedDate.month == 1) {
         return;
       }
       selectedDate = DateTime(
