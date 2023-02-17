@@ -1,9 +1,10 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_wallet/widgets/body.dart';
 import './widgets/header.dart';
-import 'package:month_picker_dialog_2/month_picker_dialog_2.dart';
+import "package:month_year_picker/month_year_picker.dart";
 import './models/expense.dart';
 import './widgets/add_expense.dart';
 
@@ -29,6 +30,11 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.montserratTextTheme(),
       ),
       home: MyWallet(),
+      localizationsDelegates: [
+        GlobalWidgetsLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        MonthYearPickerLocalizations.delegate,
+      ],
     );
   }
 }
